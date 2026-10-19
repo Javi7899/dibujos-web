@@ -1,0 +1,42 @@
+/* El cuaderno de Dibujos: papel crema, grafito y sanguina. */
+:root {
+  --canvas: #EEE7DA; --surface: #FBF8F1; --ink: #2B2A28; --subtle: #6E685F;
+  --hairline: #DCD3C2; --brand: #B5532E; --deep: #2B2A28; --guide: #4F86C6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: #1B1916; --surface: #292622; --ink: #EDE7DC; --subtle: #A59D91;
+    --hairline: #3D3832; --brand: #E27D58; --deep: #12110F;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--canvas); color: var(--ink);
+  font: 17px/1.65 "New York", "Iowan Old Style", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+/* Nada de backdrop-filter en una cabecera fija: oscurece la página de debajo. */
+header {
+  background: var(--deep); color: #F7F2E7; padding: 56px 20px 44px; text-align: center;
+  background-image: radial-gradient(circle at 78% 40%, transparent 0 118px, rgba(79,134,198,.45) 119px 120px, transparent 121px),
+                    linear-gradient(rgba(79,134,198,.35), rgba(79,134,198,.35));
+  background-size: 100% 100%, 100% 1px; background-position: 0 0, 0 60%; background-repeat: no-repeat;
+}
+header h1 { margin: 0 0 8px; font-size: clamp(30px, 7vw, 44px); letter-spacing: -0.02em; }
+header p { margin: 0; opacity: 0.8; font-size: 17px; }
+nav { display: flex; gap: 18px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+nav a { color: #F7F2E7; opacity: 0.85; text-decoration: none; border-bottom: 1px solid rgba(247,242,231,.35); padding-bottom: 2px; }
+nav a:hover { opacity: 1; }
+main { max-width: 720px; margin: 0 auto; padding: 44px 20px 80px; }
+h2 { font-size: 24px; margin: 44px 0 12px; letter-spacing: -0.01em; }
+h3 { font-size: 18px; margin: 28px 0 6px; }
+.subtle { color: var(--subtle); }
+ul { padding-left: 22px; }
+li { margin-bottom: 8px; }
+.card {
+  background: var(--surface); border: 1px solid var(--hairline);
+  border-radius: 14px; padding: 20px 22px; margin: 20px 0; box-shadow: 0 3px 10px rgba(0,0,0,.05);
+}
+a { color: var(--brand); }
+footer { border-top: 1px solid var(--hairline); margin-top: 56px; padding-top: 22px; color: var(--subtle); font-size: 14px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
